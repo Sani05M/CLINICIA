@@ -3,141 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Clinic</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Medicenter Header</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #6d7a8f;
-            color: #333;
-            
+            background-color: #f4f4f4;
         }
-        header {
-            background: linear-gradient(to right, #5999d9, #ccd5d9);
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-        nav {
+
+        .header {
             display: flex;
-            justify-content: center;
-            background: white;
-            padding: 10px 0;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #0073e6;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #005bb5;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .services {
-            display: flex;
+            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9); /* Transparent white */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px); /* Glass effect */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .service {
-            flex: 1;
-            background: white;
-            padding: 25px;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
-        .service:hover {
-            transform: translateY(-5px);
-        }
-        .contact-form {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        input, textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 12px;
-            border: 1px solid #ddd;
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
             border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
         }
-        button {
-            width: 100%;
-            background: linear-gradient(to right, #0073e6, #00aaff);
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo span {
+            font-size: 22px;
+            font-weight: bold;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav a:hover {
+            color: #39a9db;
+        }
+
+        .button {
+            background: linear-gradient(45deg, #39a9db, #2c89c6);
             color: white;
-            padding: 12px;
+            padding: 10px 20px;
             border: none;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: 0.3s;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        button:hover {
-            background: linear-gradient(to right, #005bb5, #008cd4);
-        }
-        footer {
-            background: #0073e6;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
+
+        .button:hover {
+            background: linear-gradient(45deg, #2c89c6, #1a6da0);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>CLINICIA</h1>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#About Us">About</a>
-    </nav>
-    <div class="container" id="home">
-        <!-- <h2>About Our Clinic</h2> -->
-        <p>Providing world-class healthcare services with modern facilities and experienced professionals.</p>
-    </div>
-    <div class="container" id="services">
-        <h2>Our Premium Services</h2>
-        <div class="services">
-            <div class="service"><h3>General Checkup</h3><p>Comprehensive health assessments with expert advice.</p></div>
-            <div class="service"><h3>Pediatrics</h3><p>Advanced care for newborns and children with specialized doctors.</p></div>
-            <div class="service"><h3>Emergency Care</h3><p>24/7 emergency medical support with fast response teams.</p></div>
-            <div class="service"><h3>Dental Care</h3><p>Expert dental treatments for a healthy smile.</p></div>
+    <div class="header">
+        <div class="logo">
+            <img src="Logo.png" alt="Logo">
+            <span>medicenter</span>
         </div>
-    </div>
-    <div class="container" id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2025 Premium Care Clinic. All rights reserved.</p>
-    </footer>
+        <div class="nav">
+            <a href="#">DEMOS</a>
+            <a href="#">REVIEWS</a>
+            <a href="#">FEATURES</a>
 </body>
 </html>
