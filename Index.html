@@ -7,14 +7,54 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="Logo.png" alt="Logo">
-            <span>medicenter</span>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo">
+                <span>CLINICIA DIAGONOSTIC</span>
+            </div>
+            <div class="nav">
+                <a href="#">Home</a>
+                <a href="#">Service</a>
+                <a href="#">Contact Us</a>
+    </header>
+    
+
+    <div class="slider">
+        <div class="slide active">
+            <img src="img1.jpg" alt="Slide 1">
+            <div class="text-box">
+                <h1>Modern. Elegant. <span>Medicenter</span></h1>
+                <p>For healthcare professionals and institutions.<br>Designed with detail in mind.</p>
+            </div>
         </div>
-        <div class="nav">
-            <a href="#">Home</a>
-            <a href="#">Service</a>
-            <a href="#">Contact Us</a>
+        <div class="slide">
+            <img src="img2.jpg" alt="Slide 2">
+            <div class="text-box">
+                <h1>Your Health, Our Priority</h1>
+                <p>We provide world-class medical facilities and emergency services.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="img3.jpg" alt="Slide 3">
+            <div class="text-box">
+                <h1>Emergency Case</h1>
+                <p>If you need urgent care, our doctors are available 24/7.</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

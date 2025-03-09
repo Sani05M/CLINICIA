@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
     color: white;
 }
 
+/* Header Section */
+/* Header Section */
 .header {
     display: flex;
     align-items: center;
@@ -17,12 +23,20 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
+    position: fixed; /* Changed from sticky to fixed */
     top: 0;
+    left: 0;
+    width: 100%; /* Ensures full width */
     z-index: 1000;
     transition: all 0.3s ease-in-out;
 }
 
+/* Add padding to prevent content from overlapping */
+body {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -50,6 +64,7 @@ body {
     text-shadow: 0px 0px 10px rgba(0, 212, 255, 0.8);
 }
 
+/* Navigation */
 .nav {
     display: flex;
     gap: 30px;
@@ -64,7 +79,6 @@ body {
     letter-spacing: 1px;
     transition: all 0.3s ease-in-out;
     position: relative;
-    display: inline-block; /* Ensure smooth scaling */
 }
 
 .nav a::after {
@@ -87,10 +101,10 @@ body {
 .nav a:hover {
     color: #00d4ff;
     text-shadow: 0 0 5px #00d4ff;
-    transform: scale(1.1); /* Increases size on hover */
+    transform: scale(1.1);
 }
 
-
+/* Button */
 .button {
     background: linear-gradient(90deg, #0078ff, #00d4ff);
     color: white;
@@ -127,4 +141,118 @@ body {
 
 .button:hover::after {
     opacity: 1;
+}
+
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Floating Text Box (Appears After Image) */
+.text-box {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    color: white;
+    padding: 15px;
+    max-width: 40%;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-50px); /* Start position */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.text-box h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.text-box span {
+    color: #00c3ff;
+}
+
+.text-box p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    font-size: 20px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Smooth Fade-in Animation for Text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
