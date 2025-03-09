@@ -64,6 +64,7 @@ body {
     letter-spacing: 1px;
     transition: all 0.3s ease-in-out;
     position: relative;
+    display: inline-block; /* Ensure smooth scaling */
 }
 
 .nav a::after {
@@ -86,7 +87,9 @@ body {
 .nav a:hover {
     color: #00d4ff;
     text-shadow: 0 0 5px #00d4ff;
+    transform: scale(1.1); /* Increases size on hover */
 }
+
 
 .button {
     background: linear-gradient(90deg, #0078ff, #00d4ff);
