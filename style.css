@@ -352,6 +352,111 @@ body {
     font-size: 18px;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 15px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+    font-weight: bold;
+    gap: 15px;
+}
 
+.text a {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    font-weight: bold;
+}
 
+.text a:hover {
+    text-decoration: underline;
+}
 
+.button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #e64a19;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 10%;
+    margin-top: 80px; /* Adjust margin to prevent overlap */
+}
+
+.hero-left {
+    width: 40%;
+}
+
+.hero-left h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.hero-right {
+    width: 50%;
+}
+
+.hero-right p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10%;
+}
+
+.service {
+    background-color: #f8f8f8;
+    text-align: left;
+    width: 30%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-text {
+    padding: 15px;
+}
+
+.service h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.service p {
+    font-size: 14px;
+    color: #666;
+}
