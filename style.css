@@ -16,19 +16,17 @@ body {
 /* Header Section */
 .header {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures all items align vertically */
     justify-content: space-between;
     padding: 15px 50px;
     background: whitesmoke;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    position: fixed; /* Changed from sticky to fixed */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ensures full width */
+    width: 100%;
     z-index: 1000;
-    transition: all 0.3s ease-in-out;
 }
 
 /* Add padding to prevent content from overlapping */
@@ -66,9 +64,14 @@ body {
 /* Navigation */
 .nav {
     display: flex;
+    align-items: center; /* Aligns menu items */
     gap: 30px;
 }
-
+.nav-container {
+    display: flex;
+    align-items: center; /* Ensures navigation and login button align properly */
+    gap: 30px;
+}
 .nav a {
     text-decoration: none;
     color: grey;
@@ -139,6 +142,29 @@ body {
 
 .button:hover::after {
     opacity: 1;
+}
+.login-container {
+    display: flex;
+    align-items: center; /* Aligns login button */
+}
+.signup {
+    text-decoration: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    display: inline-block;
+}
+
+.signup:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 
 
