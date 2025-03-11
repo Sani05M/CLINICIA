@@ -1,0 +1,147 @@
+/* Reset & Global raul */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Full-screen background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+    animation: backgroundAnimation 10s infinite alternate ease-in-out;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+    }
+    100% {
+        background: linear-gradient(135deg, #00c6ff, #0078ff);
+    }
+}
+
+/* Login Container */
+.container {
+    width: 420px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Heading */
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Input Group */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus Effect */
+.input-group input:focus {
+    border-color: #0078ff;
+    box-shadow: 0px 0px 10px rgba(0, 120, 255, 0.4);
+    outline: none;
+    background: white;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #0078ff, #00c6ff);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Animation */
+.btn:hover {
+    background: linear-gradient(135deg, #0056d2, #0096ff);
+    transform: scale(1.03);
+}
+
+/* Ripple Effect on Button Click */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Toggle Text */
+.toggle-text {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #555;
+}
+
+.toggle-text a {
+    color: #0078ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle-text a:hover {
+    text-decoration: underline;
+    color: #0056d2;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
