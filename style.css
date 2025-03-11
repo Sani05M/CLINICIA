@@ -16,19 +16,17 @@ body {
 /* Header Section */
 .header {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures all items align vertically */
     justify-content: space-between;
     padding: 15px 50px;
     background: whitesmoke;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    position: fixed; /* Changed from sticky to fixed */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ensures full width */
+    width: 100%;
     z-index: 1000;
-    transition: all 0.3s ease-in-out;
 }
 
 /* Add padding to prevent content from overlapping */
@@ -66,9 +64,14 @@ body {
 /* Navigation */
 .nav {
     display: flex;
+    align-items: center; /* Aligns menu items */
     gap: 30px;
 }
-
+.nav-container {
+    display: flex;
+    align-items: center; /* Ensures navigation and login button align properly */
+    gap: 30px;
+}
 .nav a {
     text-decoration: none;
     color: grey;
@@ -139,6 +142,29 @@ body {
 
 .button:hover::after {
     opacity: 1;
+}
+.login-container {
+    display: flex;
+    align-items: center; /* Aligns login button */
+}
+.signup {
+    text-decoration: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    display: inline-block;
+}
+
+.signup:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 
 
@@ -458,5 +484,76 @@ body {
 
 .service p {
     font-size: 14px;
+<<<<<<< HEAD
     color: #666;
+=======
+  color: #666;
+}
+
+body{
+    background-color: #f8f9fa;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 150vh; /* Ensure enough space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    flex: 1; /* Pushes button to the bottom */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 50px; /* Adds space to avoid overlap */
+    padding: 20px;
+}
+
+.services-button {
+    background: linear-gradient(135deg, #3A7BD5, #00D2FF); /* More vibrant blue */
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.services-button:hover {
+    background: linear-gradient(135deg, #00C6FF, #0072FF);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Click Animation */
+.services-button:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 6px;
+}
+
+/* Ripple Effect */
+.services-button::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+}
+
+.services-button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+>>>>>>> 246862e2042f2feaef5ee8ac5985501f1b3fb298
 }
