@@ -484,9 +484,6 @@ body {
 
 .service p {
     font-size: 14px;
-<<<<<<< HEAD
-    color: #666;
-=======
   color: #666;
 }
 
@@ -555,5 +552,4 @@ body{
 
 .services-button:active::after {
     transform: translate(-50%, -50%) scale(1);
->>>>>>> 246862e2042f2feaef5ee8ac5985501f1b3fb298
 }
