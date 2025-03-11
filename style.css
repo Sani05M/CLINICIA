@@ -486,10 +486,8 @@ body {
     font-size: 14px;
   color: #666;
 }
-<<<<<<< HEAD
-=======
 
-body, html {
+body{
     background-color: #f8f9fa;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -555,4 +553,3 @@ body, html {
 .services-button:active::after {
     transform: translate(-50%, -50%) scale(1);
 }
->>>>>>> 15cc6888a5cbe69b9fb0663b199c02dc825f55ca
