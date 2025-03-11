@@ -55,3 +55,6 @@ document.addEventListener("DOMContentLoaded", showSlides);
 // Add event listeners for arrow buttons
 document.getElementById("prev").addEventListener("click", () => moveSlide(-1));
 document.getElementById("next").addEventListener("click", () => moveSlide(1));
+function openLoginPage() {
+    window.location.href = "login.html";  // Redirect to login.html
+}
