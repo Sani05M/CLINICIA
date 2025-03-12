@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - OTP Verification</title>
+    <link rel="stylesheet" href="forget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Forgot Password</h2>
+        <p class="info-text">Enter your registered mobile number to receive an OTP.</p>
+        
+        <form id="otpForm">
+            <!-- Phone Number Input -->
+            <div class="input-group">
+                <label for="phone">Mobile Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+            </div>
+            
+            <!-- OTP Input (Hidden Initially) -->
+            <div class="input-group otp-section" id="otpSection" style="display: none;">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+            </div>
+
+            <!-- Buttons -->
+            <button type="button" class="btn" id="sendOtpBtn">Send OTP</button>
+            <button type="submit" class="btn" id="verifyOtpBtn" style="display: none;">Verify & Reset Password</button>
+
+            <div class="back-to-login">
+                <a href="login.html">← Back to Login</a>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
