@@ -58,3 +58,31 @@ document.getElementById("next").addEventListener("click", () => moveSlide(1));
 function openLoginPage() {
     window.location.href = "login.html";  // Redirect to login.html
 }
+function checkPasswordStrength() {
+    let password = document.getElementById("password").value;
+    let strengthText = document.getElementById("password-strength");
+
+    // Check password length
+    if (password.length < 8) {
+        strengthText.innerHTML = "Password must be at least 8 characters.";
+        strengthText.className = "weak";
+        return;
+    }
+
+    // Regular expressions for strength validation
+    let weakPattern = /[a-z]/; 
+    let mediumPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/; 
+    let strongPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W])/; 
+
+    // Evaluate strength
+    if (strongPattern.test(password)) {
+        strengthText.innerHTML = "Strong password ✅";
+        strengthText.className = "strong";
+    } else if (mediumPattern.test(password)) {
+        strengthText.innerHTML = "Medium password ⚠️";
+        strengthText.className = "medium";
+    } else if (weakPattern.test(password)) {
+        strengthText.innerHTML = "Weak password ❌";
+        strengthText.className = "weak";
+    }
+}
