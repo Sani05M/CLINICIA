@@ -145,3 +145,20 @@ h2 {
         font-size: 16px;
     }
 }
+.forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #0078ff;
+    font-size: 12.5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+    color: #0056d2;
+}
