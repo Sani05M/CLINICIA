@@ -595,4 +595,85 @@ body{
 .services-button:active::after {
     transform: translate(-50%, -50%) scale(1);
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.team-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.team-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 2px;
+    background-color: #007bff; /* Adjust color if needed */
+    margin: 8px auto 15px;
+}
+
+.team-description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.departments-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.department-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    text-align: center;
+    width: 300px; /* Adjust width */
+    overflow: hidden; /* Ensures no extra space */
+}
+
+.department-box img {
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image fills the area properly */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: block; /* Remove extra spacing */
+    aspect-ratio: 4 / 3; /* Maintain 4:3 ratio */
+}
+
+.department-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.department-box p {
+    font-size: 14px;
+    color: #555;
+    padding: 0 15px 15px;
+}
+.department-content {
+    padding: 15px;
+}
+.image-container::before {
+    content: "";
+    display: block;
+    padding-top: 75%; /* Ensures 4:3 aspect ratio (3/4 * 100 = 75%) */
+}
 
