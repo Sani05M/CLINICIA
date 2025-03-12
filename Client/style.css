@@ -596,3 +596,160 @@ body{
     transform: translate(-50%, -50%) scale(1);
 }
 
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Services section */
+.services {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    flex: 1;
+    margin: 0 10px;
+    border: 1px solid #eee;
+    padding: 15px;
+}
+
+.service-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Buttons section */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0b7dda;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .header, .services {
+        flex-direction: column;
+    }
+    
+    .header-info {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+    
+    .service-card {
+        margin: 10px 0;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.about-section {
+    background: transparent; /* Remove box background */
+    padding: 40px 30px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #040404;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #1d4ed8;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+}
+
+.about-us-title {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold;
+    text-align: center;
+    position: relative; /* Ensure proper positioning */
+    display: inline-block; /* Keeps underline aligned with the text */
+    padding-bottom: 10px; /* Space between text and underline */
+}
+
+.about-us-title::after {
+    content: "";
+    display: block;
+    width: 50px; /* Adjust width of underline */
+    height: 3px; /* Adjust thickness */
+    background-color: #007bff; /* Match the color */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%); /* Center align the underline */
+}
+
