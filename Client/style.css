@@ -13,6 +13,7 @@ body {
 }
 
 /* Header Section */
+/* Header Section */
 .header {
     display: flex;
     align-items: center; /* Ensures all items align vertically */
@@ -103,7 +104,40 @@ body {
     color: #00d4ff;
     transform: scale(1.1);
 }
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden; /* Prevents hover overflow */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    display: block;
+    text-align: left;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /* Button */
 .button {
     background: linear-gradient(90deg, #0078ff, #00d4ff);
@@ -483,7 +517,7 @@ body {
 
 .service p {
     font-size: 14px;
-  color: #666;
+  color: #666;
 }
 
 body{
@@ -502,9 +536,14 @@ body{
 
 .button-container {
     text-align: center;
-    margin-top: 50px; /* Adds space to avoid overlap */
+    margin-top: 50px; /* Space to avoid overlap */
     padding: 20px;
+    background-color: #f5f5f5; /* White Smoke Background */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow */
+    display: inline-block; /* Adjusts the background to fit around the button */
 }
+
 
 .services-button {
     background: linear-gradient(135deg, #3A7BD5, #00D2FF); /* More vibrant blue */
@@ -520,6 +559,10 @@ body{
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
 }
 
 /* Hover Effect */
@@ -552,3 +595,85 @@ body{
 .services-button:active::after {
     transform: translate(-50%, -50%) scale(1);
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.team-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.team-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 2px;
+    background-color: #007bff; /* Adjust color if needed */
+    margin: 8px auto 15px;
+}
+
+.team-description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.departments-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.department-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    text-align: center;
+    width: 300px; /* Adjust width */
+    overflow: hidden; /* Ensures no extra space */
+}
+
+.department-box img {
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image fills the area properly */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: block; /* Remove extra spacing */
+    aspect-ratio: 4 / 3; /* Maintain 4:3 ratio */
+}
+
+.department-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.department-box p {
+    font-size: 14px;
+    color: #555;
+    padding: 0 15px 15px;
+}
+.department-content {
+    padding: 15px;
+}
+.image-container::before {
+    content: "";
+    display: block;
+    padding-top: 75%; /* Ensures 4:3 aspect ratio (3/4 * 100 = 75%) */
+}
+
