@@ -677,6 +677,8 @@ body {
     padding-top: 75%; /* Ensures 4:3 aspect ratio (3/4 * 100 = 75%) */
 }
 
+
+
 /* General styling */
 body {
     font-family: Arial, sans-serif;
@@ -686,8 +688,6 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
 }
 
