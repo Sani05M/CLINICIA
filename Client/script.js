@@ -86,18 +86,7 @@ function checkPasswordStrength() {
         strengthText.className = "weak";
     }
 }
-// function sendOTP() {
-//     alert("OTP Sent to your mobile number.");
-//     document.querySelector('.otp-group').style.display = 'block';
-//     document.getElementById('verifyOTP').style.display = 'block';
-// }
-
-// function verifyOTP() {
-//     let otp = document.getElementById("otp").value;
-//     if (otp === "123456") { // Example OTP
-//         alert("OTP Verified! Redirecting...");
-//         window.location.href = "reset-password.html"; // Redirect to reset password page
-//     } else {
-//         alert("Invalid OTP! Try Again.");
-//     }
-// }
+function toggleMenu() {
+    var nav = document.querySelector(".nav");
+    nav.classList.toggle("active");
+}
