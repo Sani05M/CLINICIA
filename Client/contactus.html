@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Clinicia Healthcare</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" >
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+            padding-top: 50px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            background: whitesmoke;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: 600;
+            color: #011d21;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: grey;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav a:hover {
+            color: #00d4ff;
+            transform: translateY(-2px);
+        }
+
+        /* Map - Bigger and Rectangular */
+        .map {
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            margin: 30px 0 20px 0;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 20px auto 30px auto;
+            padding: 20px;
+        }
+
+        .contact-container h2 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Info Side by Side (Evenly Spaced) */
+        .contact-details {
+            display: flex;
+            justify-content: space-around; /* Ensures even spacing */
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-box {
+            flex: 1;
+            min-width: 250px;
+            text-align: center; /* Aligns content nicely */
+        }
+
+        .contact-box p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .contact-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-box ul li {
+            margin-bottom: 5px;
+        }
+
+        .contact-box a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-box a:hover {
+            color: #0056b3;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: white;
+}
+
+/* Header Section */
+/* Header Section */
+.header {
+    display: flex;
+    align-items: center; /* Ensures all items align vertically */
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: whitesmoke;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Add padding to prevent content from overlapping */
+body {
+    padding-top: 50px; /* Adjust based on header height */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #011d21;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center; /* Aligns menu items */
+    gap: 30px;
+}
+.nav-container {
+    display: flex;
+    align-items: center; /* Ensures navigation and login button align properly */
+    gap: 30px;
+}
+.nav a {
+    text-decoration: none;
+    color: grey;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #00d4ff, #0078ff);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav a:hover {
+    color: #00d4ff;
+    transform: scale(1.1);
+}
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden; /* Prevents hover overflow */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    display: block;
+    text-align: left;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Button */
+.button {
+    background: linear-gradient(90deg, #0078ff, #00d4ff);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #00d4ff, #0078ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.button::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button:hover::after {
+    opacity: 1;
+}
+.login-container {
+    display: flex;
+    align-items: center; /* Aligns login button */
+}
+.signup {
+    text-decoration: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    display: inline-block;
+}
+
+.signup:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo">
+                <span>CLINICIA HEALTHCARE</span>
+            </div>
+            <div class="nav">
+                <a href="Index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#">SERVICES</a>
+                    <div class="dropdown-content">
+                        <a href="#">Polyclinic</a>
+                        <a href="#">Dental Care</a>
+                        <a href="#">Pediatrics</a>
+                    </div>
+                </div>
+                <a href="#">Appointment</a>               
+                <a href="contactus.html">Contact Us</a>
+
+                <div class="buttons">
+                    <button class="signup" onclick="openLoginPage()">Login</button>
+                </div>
+    </header>
+
+    <!-- Google Map (Much Bigger & Rectangular) -->
+    <div class="map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29528.264978249277!2d87.86385588661227!3d22.314587057340482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02950058ec3fb9%3A0xac2d55bb01d463b7!2sClinicia%20Polyclinic!5e0!3m2!1sen!2sin!4v1741805961251!5m2!1sen!2sin">
+        </iframe>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-container">
+        <h2>Get in Touch</h2>
+        <div class="contact-details">
+
+            <!-- Address -->
+            <div class="contact-box">
+                <p><strong>📍 Address:</strong></p>
+                <p>8V6F+Q69, NH 116, Jayrambati, West Bengal, 721627</p>
+            </div>
+
+            <!-- Phone Numbers -->
+            <div class="contact-box">
+                <p><strong>📞 Phone:</strong></p>
+                <ul>
+                    <li><a href="tel:8293592865">8293592865</a></li>
+                    <li><a href="tel:8420523502">8420523502</a></li>
+                    <li><a href="tel:9732564538">9732564538</a></li>
+                    <li><a href="tel:9734455662">9734455662</a></li>
+                </ul>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-box">
+                <p><strong>📧 Email:</strong></p>
+                <ul>
+                    <li><a href="mailto:cliniciapolyclinic.org@gmail.com">cliniciapolyclinic.org@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <!-- Opening Hours -->
+            <div class="contact-box">
+                <p><strong>⏰ Opening Hours:</strong></p>
+                <ul>
+                    <li>Sat-Sun: 8AM - 8PM</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Clinicia Healthcare. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
