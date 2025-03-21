@@ -834,6 +834,7 @@ body {
     bottom: 0;
     transform: translateX(-50%); /* Center align the underline */
 }
+<<<<<<< HEAD
 footer {
     background: #0a4d66;
     color: white;
@@ -928,4 +929,10 @@ footer {
         max-width: 300px;
     }
 }
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> eb24a902b3c74d65de4d7e332900f695f0fa4068
 
+
+>>>>>>> 4fccdfa549cf80ecb3bbbc878e4fd76dfd09a359

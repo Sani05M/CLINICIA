@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLINICIA DIAGONOSTIC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+            height: 425px;
+        }
+
+        .doctor-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.02);
+        }
+
+        .doctor-card img {
+            width: 120px;
+            height: 120px; /* Ensures 4:3 aspect ratio */
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .doctor-details {
+            flex-grow: 1;
+        }
+
+        .doctor-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .doctor-qualification {
+            font-size: 14px;
+            color: #555;
+            font-weight: 600;
+            margin: 2px 0;
+        }
+
+        .doctor-location {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .button-group {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn.call {
+            background: #28a745;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .btn.call:hover {
+            background: #218838;
+        }
+
+        .btn.book {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn.book:hover {
+            background: #0056b3;
+        }
+
+        .btn i {
+            margin-right: 5px;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: white;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    align-items: center; /* Ensures all items align vertically */
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: whitesmoke;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Add padding to prevent content from overlapping */
+body {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #011d21;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center; /* Aligns menu items */
+    gap: 30px;
+}
+.nav-container {
+    display: flex;
+    align-items: center; /* Ensures navigation and login button align properly */
+    gap: 30px;
+}
+.nav a {
+    text-decoration: none;
+    color: grey;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #00d4ff, #0078ff);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav a:hover {
+    color: #00d4ff;
+    transform: scale(1.1);
+}
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden; /* Prevents hover overflow */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    display: block;
+    text-align: left;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Button */
+.button {
+    background: linear-gradient(90deg, #0078ff, #00d4ff);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #00d4ff, #0078ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.button::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button:hover::after {
+    opacity: 1;
+}
+.login-container {
+    display: flex;
+    align-items: center; /* Aligns login button */
+}
+.signup {
+    text-decoration: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    display: inline-block;
+}
+
+.signup:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+/* Background with Soft Gradient */
+body {
+    background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* Smooth Hover Effects */
+a, button {
+    transition: all 0.3s ease-in-out;
+}
+a:hover, button:hover {
+    transform: scale(1.05);
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.team-title {
+    font-size: 36px;
+    font-weight: bold;
+   margin-top: 60px;
+    margin-bottom: 10px;
+    color: #222;
+    position: relative;
+    display: inline-block;
+}
+
+.team-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    margin: 8px auto;
+    border-radius: 2px;
+}
+
+.team-description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+.doctor-timing {
+            font-size: 14px;
+            color: #007bff;
+            margin-top: 5px;
+        }
+
+        .doctor-fee {
+            font-size: 14px;
+            color: #ff5722;
+            margin-top: 2px;
+        }
+
+       /* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 25px;
+    width: 350px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content h2::before {
+    font-size: 24px;
+}
+
+.modal label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.modal label::after {
+    content: " ⭐";
+    color: gold;
+    font-size: 12px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.modal input:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 25px;
+    width: 350px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #d4d4d4;
+}
+
+.modal label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.modal input:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5);
+}
+
+.success {
+    background: rgba(0, 255, 127, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo">
+                <span>CLINICIA HEALTHCARE</span>
+            </div>
+            <div class="nav">
+                <a href="Index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#">SERVICES</a>
+                    <div class="dropdown-content">
+                        <a href="#">Polyclinic</a>
+                        <a href="#">Dental Care</a>
+                        <a href="#">Pediatrics</a>
+                    </div>
+                </div>
+                <a href="#">Appointment</a>               
+                <a href="contactus.html">Contact Us</a>
+
+                <div class="buttons">
+                    <button class="signup" onclick="openLoginPage()">Login</button>
+                </div>
+    </header>
+    <section class="team-section">
+        <h2 class="team-title">Meet Our Doctors</h2>
+        <div class="underline"></div>
+        <p class="team-description">
+            Is it the people who make Medicenter what it is and we are extremely proud of the achievements of our staff. 
+            We all work together to help our patients through recovery, providing the best possible care.
+        </p>
+    </section>
+    
+    <div class="container">
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+
+                </div>
+            </div>
+        </div>
+                
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="img9.jpg" alt="Dr. Vaibhav Seth">
+            <div class="doctor-details">
+                <p class="doctor-name">Dr. Vaibhav Seth</p>
+                <p class="doctor-qualification">MBBS, MD - General Medicine</p>
+                <p class="doctor-location">Tamluk, Midnapore</p>
+                <p class="doctor-timing">Timing: 10:00 AM - 6:00 PM</p>
+                <p class="doctor-fee">Fees: ₹500</p>
+                <div class="button-group">
+                    <a href="tel:07405416228" class="btn call"><i>📞</i> Call</a>
+                    <a href="#" class="btn book" onclick="openBookingForm()">📅 Book Appointment</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Appointment Modal -->
+<div id="appointmentModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>📅 Book Your Appointment</h2>
+
+        <label>👤 Your Name:</label>
+        <input type="text" id="userName" placeholder="Enter your name" required>
+
+        <label>📞 Contact Number:</label>
+        <input type="tel" id="userPhone" placeholder="Enter phone number" required>
+
+        <label>📧 Email Address:</label>
+        <input type="email" id="userEmail" placeholder="Enter email" required>
+
+        <label>📆 Select Date:</label>
+        <input type="date" id="appointmentDate" required>
+
+        <label>🕒 Appointment Time:</label>
+        <input type="text" id="appointmentTime" value="10:00 AM - 6:00 PM" readonly>
+
+        <button class="btn" onclick="sendOTP()">📩 Send OTP</button>
+
+        <div id="otpSection" style="display:none;">
+            <label>🔢 Enter OTP:</label>
+            <input type="text" id="otpInput" placeholder="Enter OTP">
+            <button class="btn" onclick="verifyOTP()">✅ Verify OTP</button>
+        </div>
+
+        <button id="confirmBooking" class="btn" onclick="confirmBooking()" disabled>✔ Confirm Booking</button>
+    </div>
+</div>
+
+<!-- Success Popup -->
+<div id="successPopup" class="modal" style="display:none;">
+    <div class="modal-content success">
+        <span class="close" onclick="closeSuccessPopup()">&times;</span>
+        <h2>✅ Appointment Confirmed!</h2>
+        <p>Your appointment has been successfully booked.</p>
+    </div>
+</div>
+
+<script>
+ let generatedOTP = null;
+
+// Open the appointment modal
+function openBookingForm() {
+    document.getElementById("appointmentModal").style.display = "flex";
+    document.getElementById("userPhone").value = ""; // Clear input
+    document.getElementById("otpInput").value = ""; // Clear OTP field
+    document.getElementById("otpSection").style.display = "none"; // Hide OTP section
+    document.getElementById("confirmBooking").disabled = true; // Disable booking button
+}
+
+// Close the modal
+function closeModal() {
+    document.getElementById("appointmentModal").style.display = "none";
+}
+
+// Send OTP
+function sendOTP() {
+    let phone = document.getElementById("userPhone").value.trim();
+
+    if (!/^\d{10}$/.test(phone)) {
+        alert("❌ Please enter a valid 10-digit phone number.");
+        return;
+    }
+
+    generatedOTP = Math.floor(1000 + Math.random() * 9000);
+    alert(`📩 Your OTP is: ${generatedOTP}`); // Simulating OTP send
+    document.getElementById("otpSection").style.display = "block";
+}
+
+// Verify OTP
+function verifyOTP() {
+    let enteredOTP = document.getElementById("otpInput").value.trim();
+
+    if (enteredOTP == generatedOTP) {
+        alert("✅ OTP Verified!");
+        document.getElementById("confirmBooking").disabled = false;
+    } else {
+        alert("❌ Incorrect OTP. Please try again.");
+    }
+}
+
+// Confirm booking
+function confirmBooking() {
+    alert("✅ Appointment successfully booked!");
+    closeModal();
+}
+function confirmBooking() {
+    document.getElementById("appointmentModal").style.display = "none"; // Hide booking modal
+    document.getElementById("successPopup").style.display = "flex"; // Show success modal
+}
+
+function closeSuccessPopup() {
+    document.getElementById("successPopup").style.display = "none"; // Hide success modal
+}
+
+
+
+</script>
+
+       
+
+</body>
+</html>
